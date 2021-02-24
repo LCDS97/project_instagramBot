@@ -34,7 +34,7 @@ class InstagramBot:
         time.sleep(random.randint(4,6))
         password_element.send_keys(Keys.RETURN)
         time.sleep(random.randint(4,7))
-        self.curtir_fotos_com_a_hashtag("memesBR") # Alterar a hashtag aqui
+        self.curtir_fotos_com_a_hashtag("skate") # Alterar a hashtag aqui
 
     @staticmethod
     def type_like_a_person(sentence, single_input_field):
@@ -64,7 +64,7 @@ class InstagramBot:
             try:
                 pic_href.index("https://www.instagram.com/p")
             except ValueError as err:
-                print("Pulanod link inválido!")
+                print("Pulando link inválido!")
                 continue
             driver.get(pic_href)
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -72,8 +72,10 @@ class InstagramBot:
                 #driver.find_element_by_class_name('//button[@class="_9AhH0"')
                 #time.sleep(10)
                 
-                driver.find_element_by_class_name("//button[contains(@class='wpO6b')]").click()
-                driver.find_element_by_xpath("//span[@class='fr66n']").click()
+                #driver.find_element_by_class_name("wpO6b").click()
+                #driver.find_elements_by_css_selector(".eos2AS section span button").click()
+                driver.find_element_by_xpath("/html/body/div[1]/section/main/div/div[1]/article/div[3]/section[1]/span[1]/button")
+               # driver.find_element_by_xpath("//span[@class='fr66n']").click() 
 
                 driver.find_element_by_class_name("eo2As").find_element_by_class_name("ltpMr").find_element_by_class_name("fr66n").find_element_by_tag_name("button").click()
                 time.sleep(random.randint(19,23))
